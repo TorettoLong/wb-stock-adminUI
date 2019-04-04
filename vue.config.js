@@ -6,8 +6,8 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = pkg.name || 'vue-element-admin' // page title
-const port = 9527 // dev port
+const name = pkg.name || '-admin' // page title
+const port = 9528 // dev port
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
@@ -34,7 +34,7 @@ module.exports = {
       // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
-        target: `http://localhost:${port}/mock`,
+        target: `http://localhost:${port}`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
